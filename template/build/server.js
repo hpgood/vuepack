@@ -38,7 +38,7 @@ const server = new Server(compiler, Object.assign({
   historyApiFallback: true,
   overlay: true,
   disableHostCheck: true,
-  publicPath: compiler.options.publicPath
+  publicPath: config.publicPath
 }, devServerOptions))
 
 server.listen(port, host)
