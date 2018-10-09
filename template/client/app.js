@@ -3,6 +3,11 @@ import { sync } from 'vuex-router-sync'
 import App from './components/App'
 import router from './router'
 import store from './store'
+import { Button, Header, MessageBox } from 'mint-ui'
+import '@babel/polyfill'
+
+Vue.component(Button.name, Button)
+Vue.component(Header.name, Header)
 
 sync(store, router)
 
