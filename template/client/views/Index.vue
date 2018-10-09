@@ -139,6 +139,6 @@ export default {
   padding: 15px 15px;
 }
 .page-header button {
-  margin: 10px;
+  padding: 10px;
 }
 </style>
