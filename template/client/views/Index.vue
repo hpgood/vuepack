@@ -88,7 +88,7 @@ export default {
                         that.$store.commit('saveUserName',that.username)
                         that.$store.commit('saveUser',{user_name:d.user_name,real_name:d.real_name,user_id:d.user_id})
                         that.$store.commit('saveToken',token)
-                        
+                        that.logined=true
                         console.log('登录成功！')
                         that.$router.push("/")
 
