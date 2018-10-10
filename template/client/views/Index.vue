@@ -77,7 +77,7 @@ export default {
                 // console.log(response.data)
                 let code=res.data.code
                 let authCode=Auth.toAuthCode(that.password,code)
-                axios.post(that.$store.state.base+"/v3/login",qs.stringify({"name":that.username,"password":authCode,'code':code})).then(function(response){
+                axios.post(that.$store.state.base+"/v3/login",qs.stringify({"name":that.username,"password":authCode,'code':code,'identity':'S','from':'myprj'})).then(function(response){
                     console.log(response.data)
                     console.log(response.status)
 
