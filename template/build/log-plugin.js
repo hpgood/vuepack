@@ -9,7 +9,7 @@ module.exports = class LogPlugin {
 
   apply(compiler) {
     compiler.plugin('done', () => {
-      console.log(`> VuePack is running at ${chalk.yellow(`http://${this.options.host}:${this.options.port}`)}\n`)
+      console.log(`> VuePack is running at ${chalk.yellow(`http://${this.options.host}:${this.options.port}${this.options.publicPath}`)}\n`)
     })
   }
 }
