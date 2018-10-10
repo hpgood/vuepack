@@ -15,13 +15,14 @@ const devServerOptions = Object.assign({}, webpackConfig.devServer, config.devSe
 
 const host = devServerOptions.host
 const port = devServerOptions.port
+const publicPath = config.publicPath
 
 webpackConfig.entry.client = [
   path.join(__dirname, '../client/dev-client.js'),
   webpackConfig.entry.client
 ]
 
-webpackConfig.plugins.push(new LogPlugin({ host, port }))
+webpackConfig.plugins.push(new LogPlugin({ host, port,publicPath }))
 
 let compiler
 
