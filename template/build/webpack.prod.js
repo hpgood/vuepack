@@ -16,7 +16,7 @@ if (config.electron) {
   rm.sync('app/assets/*')
 } else {
   // remove dist folder in web app mode
-  rm.sync('dist/*')
+  rm.sync(config.dist + '/*')
   // use source-map in web app mode
   base.devtool = 'source-map'
 }
