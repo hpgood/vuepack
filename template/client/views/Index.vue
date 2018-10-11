@@ -81,7 +81,7 @@ export default {
                     console.log(response.data)
                     console.log(response.status)
 
-                    if(response.status==200){
+                    if(response.status>=200 && response.status<300){
                         let token=response.headers["x-auth-token"]
                         console.log("token=",token)
                         let d=response.data
