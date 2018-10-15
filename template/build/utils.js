@@ -13,8 +13,8 @@ _.cssLoaderModule = 'css-loader?-autoprefixer&modules&importLoaders=1&localIdent
 _.cssLoaderNoModule = 'css-loader?-autoprefixer'
 
 _.cssProcessors = [
-  {loader: '', test: /(mint\-ui)+.+\.css$/, moudle: false },
-  {loader: '', test: /^((?!mint\-ui).)+\.css$/, moudle: config.cssModules },
+  {loader: '', test: /(\-ui)+.+\.css$/, moudle: false },//mint-ui,element-ui don't need moudule!
+  {loader: '', test: /^((?!\-ui).)+\.css$/, moudle: config.cssModules },
   {loader: 'sass-loader?sourceMap', test: /\.scss$/, moudle: config.cssModules },
   {loader: 'less-loader?sourceMap', test: /\.less$/, moudle: config.cssModules },
   {loader: 'stylus-loader?sourceMap', test: /\.styl$/, moudle: config.cssModules },
