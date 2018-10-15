@@ -24,10 +24,14 @@ _.cssProcessors.forEach(processor => {
   } else {
     loaders = ['postcss-loader', processor.loader]
   }
+  let cssLoader = _.cssLoaderModule
+  if (!processor.moudle) {
+    cssLoader = _.cssLoaderNoModule
+  }
   base.module.loaders.push(
     {
       test: processor.test,
-      loaders: ['style-loader', _.cssLoader].concat(loaders)
+      loaders: ['style-loader', cssLoader].concat(loaders)
     }
   )
 })
