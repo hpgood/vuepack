@@ -9,16 +9,16 @@ _.cwd = (file) => {
   return path.join(process.cwd(), file || '')
 }
 
-_.cssLoader = config.cssModules ?
-  'css-loader?-autoprefixer&modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]' :
-  'css-loader?-autoprefixer'
+_.cssLoaderModule = 'css-loader?-autoprefixer&modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]'
+_.cssLoaderNoModule = 'css-loader?-autoprefixer'
 
 _.cssProcessors = [
-  {loader: '', test: /\.css$/},
-  {loader: 'sass-loader?sourceMap', test: /\.scss$/},
-  {loader: 'less-loader?sourceMap', test: /\.less$/},
-  {loader: 'stylus-loader?sourceMap', test: /\.styl$/},
-  {loader: 'sass-loader?indentedSyntax&sourceMap', test: /\.sass$/},
+  {loader: '', test: /(mint\-ui)+.+\.css$/, moudle: false },
+  {loader: '', test: /^((?!mint\-ui).)+\.css$/, moudle: config.cssModules },
+  {loader: 'sass-loader?sourceMap', test: /\.scss$/, moudle: config.cssModules },
+  {loader: 'less-loader?sourceMap', test: /\.less$/, moudle: config.cssModules },
+  {loader: 'stylus-loader?sourceMap', test: /\.styl$/, moudle: config.cssModules },
+  {loader: 'sass-loader?indentedSyntax&sourceMap', test: /\.sass$/, moudle: config.cssModules },
 ]
 
 _.outputPath = config.electron ?
