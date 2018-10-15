@@ -72,10 +72,14 @@ _.cssProcessors.forEach(processor => {
   } else {
     loaders = ['postcss-loader', processor.loader]
   }
+  let cssLoader = _.cssLoaderModule
+  if (!processor.moudle) {
+    cssLoader = _.cssLoaderNoModule
+  }
   base.module.loaders.push({
     test: processor.test,
     loader: ExtractTextPlugin.extract({
-      use: [_.cssLoader].concat(loaders),
+      use: [cssLoader].concat(loaders),
       fallback: 'style-loader'
     })
   })
