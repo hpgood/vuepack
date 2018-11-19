@@ -38,7 +38,11 @@
     "plugins": [
       [
         "component",
-        [
+        [ {{#elementui}}
+          {
+            "libraryName": "element-ui",
+            "styleLibraryName": "theme-chalk"
+          },{{/elementui}}
           {
             "libraryName": "mint-ui",
             "style": true
