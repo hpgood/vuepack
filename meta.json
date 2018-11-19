@@ -15,6 +15,11 @@
       "type": "string",
       "message": "Author"
     },
+    "elementui": {
+      "type": "confirm",
+      "message": "Do you want to use Element-UI?",
+      "default": false
+    },
     "eslint": {
       "type": "confirm",
       "message": "Do you want to use ESLint?"
